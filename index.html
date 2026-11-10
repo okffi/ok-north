@@ -3,30 +3,119 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Open Knowledge Foundation</title>
+<meta name="theme-color" content="#242424">
+<title>OK North | Reclaim the Open!</title>
 <style>
-:root{--black:#1b1b1b;--yellow:#ffd33d;--white:#fff}
-*{box-sizing:border-box}
-body{margin:0;font-family:"Poppins",Arial,sans-serif;color:var(--black);line-height:1.6}
-header{padding:1rem 2rem;background:var(--white);font-weight:700;font-size:1.25rem;border-bottom:1px solid #eee}
-.banner{min-height:70vh;display:flex;align-items:center;padding:4rem 2rem;color:var(--white);background:var(--black) url(banner.svg) center/cover no-repeat}
-.banner div{max-width:40rem}
-h1{font-size:clamp(2.2rem,6vw,4rem);line-height:1.1;margin:0 0 1rem}
-p{font-size:1.2rem;margin:0 0 2rem}
-.btn{display:inline-block;background:var(--yellow);color:var(--black);padding:.9rem 2rem;font-weight:700;text-decoration:none;border-radius:4px}
-.btn:hover,.btn:focus{background:var(--white)}
-footer{padding:2rem;text-align:center;font-size:.9rem;background:var(--black);color:#bbb}
+:root {
+  color-scheme: dark;
+  --ink: #242424;
+  --blue: #286da5;
+  --navy: #202f60;
+  --purple: #d66eec;
+  --yellow: #f5ff00;
+  --white: #fafaf6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--white);
+  font-family: "Poppins", "Helvetica Neue", Arial, sans-serif;
+}
+.page {
+  min-height: 100vh;
+  background: linear-gradient(90deg, var(--blue) 0 44.5%, var(--ink) 44.5%);
+}
+.container {
+  width: min(100% - 6rem, 90rem);
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 5.25rem) 0;
+}
+.brand {
+  display: inline-block;
+  padding: .8rem 2rem;
+  border-radius: 999px;
+  background: var(--purple);
+  color: var(--ink);
+  font-size: clamp(.85rem, 1.5vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 6vw, 6rem);
+  align-items: start;
+  margin-top: clamp(3rem, 7vw, 7rem);
+}
+h1 {
+  max-width: 8ch;
+  margin: 0;
+  font-size: clamp(4.5rem, 10.5vw, 10rem);
+  font-weight: 400;
+  letter-spacing: -.065em;
+  line-height: .96;
+}
+.intro {
+  padding-top: clamp(.5rem, 2vw, 2rem);
+}
+.intro p {
+  max-width: 40rem;
+  margin: 0;
+  font-size: clamp(1.05rem, 1.45vw, 1.4rem);
+  line-height: 1.5;
+}
+.intro .lead {
+  margin-bottom: 2rem;
+  font-size: clamp(1.4rem, 2.2vw, 2.1rem);
+  line-height: 1.25;
+}
+.register {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  padding: 1rem 1.5rem;
+  border: 2px solid var(--yellow);
+  color: var(--yellow);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color .15s, color .15s;
+}
+.register span { font-size: 1.7rem; line-height: 1; }
+.register:hover, .register:focus-visible {
+  background: var(--yellow);
+  color: var(--ink);
+}
+.register:focus-visible { outline: 2px solid var(--white); outline-offset: 4px; }
+@media (max-width: 700px) {
+  .page { background: linear-gradient(180deg, var(--blue), var(--navy) 38%, var(--ink) 38%); }
+  .container { width: min(100% - 2.5rem, 90rem); padding: 2rem 0 4rem; }
+  .brand { padding: .7rem 1.4rem; }
+  .hero { grid-template-columns: 1fr; gap: 4rem; margin-top: 3rem; }
+  h1 { font-size: clamp(4rem, 17vw, 7rem); }
+  .intro { padding-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .register { transition: none; }
+}
 </style>
 </head>
 <body>
-<header>OK North</header>
-<section class="banner">
-<div>
-<h1>Reclaim the Open!</h1>
-<p>Join us for a day of exchanges about digital sovereignty, access to reliable data, resilient digital infrastructure, and safeguarding cultural heritage at risk.</p>
-<p><b>Reclaim the Open</b> highlights openness as a core Nordic–Baltic value. OK North brings together actors in culture, research, media, technology, and public policy to explore knowledge and culture as critical infrastructure in times of geopolitical and technological disruption. We will discuss digital sovereignty, access to reliable data, resilient digital infrastructure, and safeguarding cultural heritage at risk. Our goal is to map ongoing initiatives and spark lasting collaboration across the Nordics and Baltic.</p>
-  <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScbEhm7yjR8rLUFTTvHIexrN6yXSxPu9rWqyFg7RXGHHdxaLg/viewform?usp=dialog">Register</a>
+<div class="page">
+  <div class="container">
+    <header><span class="brand">OK North</span></header>
+    <main class="hero">
+      <h1>Reclaim the Open!</h1>
+      <div class="intro">
+        <p class="lead">Join us for a day of exchanges about digital sovereignty, access to reliable data, resilient digital infrastructure, and safeguarding cultural heritage at risk.</p>
+        <p><b>Reclaim the Open</b> highlights openness as a core Nordic–Baltic value. OK North brings together actors in culture, research, media, technology, and public policy to explore knowledge and culture as critical infrastructure in times of geopolitical and technological disruption. We will discuss digital sovereignty, access to reliable data, resilient digital infrastructure, and safeguarding cultural heritage at risk. Our goal is to map ongoing initiatives and spark lasting collaboration across the Nordics and Baltic.</p>
+        <a class="register" href="https://docs.google.com/forms/d/e/1FAIpQLScbEhm7yjR8rLUFTTvHIexrN6yXSxPu9rWqyFg7RXGHHdxaLg/viewform?usp=dialog">Register <span aria-hidden="true">↗</span></a>
+      </div>
+    </main>
+  </div>
 </div>
-</section>
 </body>
 </html>
