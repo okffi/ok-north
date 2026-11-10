@@ -25,11 +25,19 @@ body {
 .page {
   min-height: 100vh;
   background: linear-gradient(90deg, var(--blue) 0 44.5%, var(--ink) 44.5%);
+  position: relative;
 }
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0 55.5% 0 0;
+  background: url("images/bluediamond.png") center / cover no-repeat;
+}
+
 .container {
-  width: min(100% - 6rem, 90rem);
-  margin: 0 auto;
-  padding: clamp(2rem, 6vw, 5.25rem) 0;
+  position: relative;
+  z-index: 1;
 }
 .brand {
   display: inline-block;
@@ -40,7 +48,6 @@ body {
   font-size: clamp(.85rem, 1.5vw, 1.2rem);
   font-weight: 700;
   letter-spacing: .04em;
-  text-transform: uppercase;
 }
 .hero {
   display: grid;
@@ -106,7 +113,7 @@ h1 {
 <body>
 <div class="page">
   <div class="container">
-    <header><span class="brand">OK North</span></header>
+    <header><span class="brand">Join OK North in Copenhagen</span></header>
     <main class="hero">
       <h1>Reclaim the Open!</h1>
       <div class="intro">
