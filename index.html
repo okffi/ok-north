@@ -68,7 +68,7 @@ body {
 
 .layout {
   display: grid;
-      grid-template-columns: 68% 32%;
+  grid-template-columns: minmax(0, 1fr) 32%;
   align-items: start;
 }
 
@@ -78,7 +78,7 @@ h1 {
   width: 100%;
   max-width: none;
   margin: 0;
-  font-size: clamp(4.5rem, 10.5vw, 10rem);
+  font-size: clamp(4.5rem, 10vw, 10rem);
   font-weight: 500;
   letter-spacing: -.025em;
   line-height: .88;
@@ -196,38 +196,45 @@ h1 {
   object-fit: contain;
 }
 
-/* Register */
-
+/* Register button */
+	
 .register {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-top: 0;
-  justify-self: start;
-  padding: 1rem 1.5rem;
-  border: 2px solid var(--yellow);
-  color: var(--yellow);
-  font-size: 1.2rem;
+  width: 100%;
+  justify-self: stretch;
+  padding: 1rem 1.75rem;
+  border: 2px solid var(--pink);
+  border-radius: 3rem;
+  background: var(--pink);
+  color: var(--white);
+  font-size: clamp(.65rem, 1.15vw, 1rem);
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
   text-decoration: none;
-  transition: background-color .15s, color .15s;
+  white-space: nowrap;
+  transition: background-color .2s, color .2s, border-color .2s;
+  justify-content: center;
+  container-type: inline-size;
 }
 
 .register span {
-  font-size: 1.7rem;
-  line-height: 1;
+  flex-shrink: 0;
 }
 
 .register:hover,
 .register:focus-visible {
-  background: var(--yellow);
-  color: var(--ink);
+  background: transparent;
+  color: var(--pink);
+  border-color: var(--pink);
 }
 
 .register:focus-visible {
   outline: 2px solid var(--white);
   outline-offset: 4px;
 }
+
 
 /* Mobile */
 
@@ -403,12 +410,15 @@ h1 {
 
         </div>
 
-        <a
-          class="register"
-          href="https://docs.google.com/forms/d/e/1FAIpQLScbEhm7yjR8rLUFTTvHIexrN6yXSxPu9rWqyFg7RXGHHdxaLg/viewform?usp=dialog"
-        >
-          Join OK North in Copenhagen
-        </a>
+
+<a
+  class="register"
+  href="https://docs.google.com/forms/d/e/1FAIpQLScbEhm7yjR8rLUFTTvHIexrN6yXSxPu9rWqyFg7RXGHHdxaLg/viewform?usp=dialog"
+>
+  <span>Join OK North in Copenhagen</span>
+</a>
+
+
 
       </section>
 
