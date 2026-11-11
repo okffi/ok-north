@@ -15,6 +15,7 @@
   --yellow: #E4FF36;
   --white: #fafaf6;
   --pink: #E077FF;
+  --pane-gap: clamp(2rem, 5vw, 5rem);
 }
 
 * {
@@ -81,11 +82,11 @@ h1 {
 /* Left / blue side */
 
 .event-column {
-  padding-right: clamp(2rem, 5vw, 5rem);
+  padding-right: var(--pane-gap);
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   align-content: start;
-  gap: 1.5rem;
+  gap: 2.5rem;
 }
 
 /* Event information */
@@ -127,7 +128,7 @@ h1 {
 
 .programme-title {
   margin-bottom: .75rem;
-  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
   font-weight: 700;
 }
 
@@ -155,7 +156,7 @@ h1 {
 /* Right / dark side */
 
 .intro-column {
-  padding-left: clamp(2rem, 6vw, 6rem);
+  padding-left: var(--pane-gap);
   padding-top: 0;
   display: grid;
   grid-template-columns: minmax(0, 40rem);
@@ -228,10 +229,11 @@ h1 {
       );
   }
 
-  .page::before {
-    inset: 0 0 62% 0;
-    background: url("images/bluediamond.png") center / cover no-repeat;
-  }
+.page::before {
+  inset: 0;
+  height: 100dvh;
+  background: url("images/bluediamond.png") center / cover no-repeat;
+}
 
   .container {
     width: min(100% - 2.5rem, 90rem);
