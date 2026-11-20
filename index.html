@@ -358,6 +358,28 @@ h1 {
     transition: none;
   }
 }
+	
+.bounce {
+  animation: gentleBounce 4s ease-in-out infinite;
+}
+
+@keyframes gentleBounce {
+  0%, 85%, 100% {
+    transform: translateY(0);
+  }
+  88% {
+    transform: translateY(-5px);
+  }
+  91% {
+    transform: translateY(0);
+  }
+  94% {
+    transform: translateY(-2px);
+  }
+  97% {
+    transform: translateY(0);
+  }
+}
 </style>
 </head>
 
@@ -452,7 +474,7 @@ h1 {
         <div class="programme">
 
           <div class="programme-title">Program</div>
-			<div>Open sections by clicking</div>
+			<div class="bounce deadline">Open sections by clicking</div>
 
           <!-- Morning session -->
 
